@@ -1,11 +1,13 @@
-def QuickSort(arr, left, right):
-	
+def QuickSort(arr):
+	return QuickSortHelper(arr, 0, len(arr) - 1)
+
+def QuickSortHelper(arr, left, right):
 	if (left >= right):
 		return
-	pivot : int = (left + right) // 2
+	pivot : int = (left + right ) // 2
 	index : int = partition(arr, left, right, pivot)
-	QuickSort(arr, left, index - 1)
-	QuickSort(arr, index, right)
+	QuickSortHelper(arr, left, index - 1)
+	QuickSortHelper(arr, index, right)
 
 def partition(arr, left, right, pivot):
 	while (left <= right):
@@ -25,9 +27,9 @@ def swap(arr, i : int, j: int):
 	arr[j] = temp
 
 def main():
-	arr = [10, 7, 3, 2, 6]
-	QuickSort(arr, 0, len(arr) - 1)
+	arr = [10, 7, 3, 12, 0, 69, 11, 2, 6]
+	QuickSort(arr)
 	print(arr)
 
 if __name__ == '__main__':
-	main()
+    main()

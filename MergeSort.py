@@ -39,7 +39,7 @@ def MergeSort(arr):
 		print(right)
 		print("done")"""
 def main():
-	arr = [12, 11, 13, 5, 7, 6]
+	arr = [45,12,99,69,1,13]
 	MergeSort(arr)
 	print(arr)
 
